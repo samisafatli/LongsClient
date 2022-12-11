@@ -2,10 +2,11 @@ import OngItem from './OngItem'
 import classes from './OngList.module.css'
 
 const OngList = props => {
+  const {ongs} = props
   return (
     <div>
       <ul className={classes.list}>
-        {props.ongs.map(ong => (
+        {ongs.reverse().map(ong => (
           <OngItem
             key={ong._id}
             id={ong._id}
