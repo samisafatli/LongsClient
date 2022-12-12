@@ -1,12 +1,12 @@
-import OngItem from './OngItem'
-import classes from './OngList.module.css'
+import OngItem from "./OngItem";
+import classes from "./OngList.module.css";
 
-const OngList = props => {
-  const {ongs} = props
+const OngList = (props) => {
+  const { ongs } = props;
   return (
     <div>
       <ul className={classes.list}>
-        {ongs.reverse().map(ong => (
+        {ongs.reverse().map((ong) => (
           <OngItem
             key={ong._id}
             id={ong._id}
@@ -19,7 +19,7 @@ const OngList = props => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default OngList
+export default OngList;
