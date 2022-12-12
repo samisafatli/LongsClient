@@ -1,17 +1,15 @@
 import { useHistory } from 'react-router-dom'
 import NewOngForm from '../components/ongs/NewOngForm'
+import axios from 'axios'
 
 const NewOng = () => {
   const ongURL = 'http://localhost:3333/ongs'
-  
-  const history = useHistory()
 
   const addOngHandler = ongData => {
-    fetch(ongURL, {
-      method: 'POST',
-      body: JSON.stringify(ongData),
-      headers: { 'Content-Type': 'application/json'}
-    }).then(() => history.replace('/'))
+    const {title, description, email, category} = ongData
+    axios.post(ongURL, {
+      title, description, email, category
+    }).then(response => response).catch(error => error)
   }
   return (
     <section>
