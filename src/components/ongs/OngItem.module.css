@@ -12,9 +12,6 @@
   padding-right: 1rem;
 }
 
-.action {
-}
-
 .action:hover,
 .action:active {
   color: #057dcd;
