@@ -8,6 +8,13 @@ const NewOngForm = props => {
   const emailInputRef = useRef()
   const descriptionInputRef = useRef()
 
+  const clearForm = () => {
+    nameInputRef.current.value = ''
+    categoryInputRef.current.value = ''
+    emailInputRef.current.value = ''
+    descriptionInputRef.current.value = ''
+  }
+
   const submitHandler = (event) => {
     event.preventDefault()
     const enteredTitle = nameInputRef.current.value
@@ -22,6 +29,7 @@ const NewOngForm = props => {
       description: enteredDescription,
     }
     props.onAddOng(ongData)
+    clearForm()
   }
 
   return (
