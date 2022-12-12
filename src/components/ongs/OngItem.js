@@ -1,11 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios';
 import classes from './OngItem.module.css'
 import Card from '../ui/Card'
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import baseURL from '../../constants';
+
 const OngItem = props =>  {
+
+  const [ongs, setOngs] = useState(props.ongs)
   const {item, content, actions, action} = classes
-  const {category, description, email, title} = props
+  const {id, category, description, email, title} = props
+
+const handleDelete = (id) => {
+  axios.delete(`${baseURL}/${id}`).then(res => {
+    const del = ongs.filter(ong => id !== ong.id)
+    setOngs(del)
+    window.location.reload()
+  })
+}
 
   return (
     <div>
@@ -18,8 +30,7 @@ const OngItem = props =>  {
             <p>{description}</p>
           </div>
           <div className= {actions}>
-              <DeleteIcon style={{marginRight: "25px"}} className={action}/>
-              <EditIcon className={action}/>
+              <DeleteIcon style={{marginRight: "25px"}} className={action} onClick={() => handleDelete(id)}/>
             </div>
         </Card>
       </li>

@@ -14,6 +14,7 @@ const OngList = props => {
             title={ong.title}
             category={ong.category}
             description={ong.description}
+            ongs={ongs}
           />
         ))}
       </ul>
