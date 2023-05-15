@@ -1,7 +1,7 @@
 # L ONGs Client
 LONGs é um localizador de Ongs.
 
-Este repositório possui o front do meu TCC.
+Este repositório possui o front de um projeto teste com o objetivo academico.
 Este Front será responsável por receber os usuários e se comunicar com o [Back](https://github.com/samisafatli/LongsAPI).
 
 ## Setup
